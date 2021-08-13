@@ -1,0 +1,27 @@
+<app-loading *ngIf="loading"></app-loading>
+<div class="titulo">
+    <span>BUSCA</span>
+    <br>
+    <span>ENCUENTRA</span>
+    <br>
+    <span class="subrayado">DISFRUTA</span>
+    <br>
+    <span class="animate__animated animate__fadeIn">POR CAPITAL</span>
+</div>
+
+<div class="formulario animate__animated animate__fadeIn" >
+    <app-pais-input
+        (onEnter)="buscar($event)"
+        (onDebounce)="sugerencias($event)"
+        placeholder="Buscar por capital"
+        >
+    </app-pais-input>
+</div>
+
+<div *ngIf="is404" 
+    class="sinResultado">
+    <i class="far fa-sad-cry"></i>
+    <span>NO SE ENCONTRARON RESULTADOS ;-;</span>
+</div>
+
+<app-pais-tabla [paises]="paises"></app-pais-tabla>

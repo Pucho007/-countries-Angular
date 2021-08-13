@@ -1,0 +1,23 @@
+<div *ngIf="paises.length>0" 
+    class="resultado">
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Bandera</th>
+                <th>Pais</th>
+                <th>Poblacion</th>
+                <th>Más información</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pais of paises">
+                <td>{{pais.numericCode}}</td>
+                <td> <img [src]="pais.flag" alt="pais"> </td>
+                <td>{{pais.nativeName}}, {{pais.capital}}</td>
+                <td>{{pais.population}}</td>
+                <td><a [routerLink]="['/pais', pais.alpha2Code]">ver más...</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

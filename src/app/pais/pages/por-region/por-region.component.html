@@ -1,0 +1,25 @@
+<app-loading *ngIf="loading"></app-loading>
+
+<div class="titulo">
+    <span>BUSCA</span>
+    <br>
+    <span>ENCUENTRA</span>
+    <br>
+    <span class="subrayado">DISFRUTA</span>
+    <br>
+    <span class="animate__animated animate__fadeIn">POR REGION</span>
+
+</div>
+
+
+<div class="body-region">
+    <button 
+        *ngFor="let region of regiones"
+        [class]="aniadirClase(region)"
+        (click)="seleccionarRegion(region)"
+        >
+        {{region}}
+    </button>
+</div>
+
+<app-pais-tabla [paises]="paises"></app-pais-tabla>

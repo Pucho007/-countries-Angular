@@ -1,0 +1,25 @@
+<div class="loading" *ngIf="!pais; else bodyPais">
+    Espere por favor..
+</div>
+
+
+<ng-template #bodyPais>
+    
+    <div class="body-pais" style="text-align: center">
+        <h1 style="background-color: #fff; display: inline; ">{{pais.name}}</h1> <br/>
+        <img [src]="pais.flag" alt="bandera" style="width: 30%;">
+        <div class="body-data" style="display:grid; grid-template-columns: 50% 50%;">
+            <div class="colum-1">
+                <h3>Nombre: {{pais.name}}</h3>
+                <h3>Region: {{pais.region}}</h3>
+                <h3>Capital: {{pais.capital}}</h3>
+            </div>
+            <div class="colum-2">
+                <h3>Poblacion: {{pais.population | number}} </h3>
+                <h3>Area: {{pais.area| number}} </h3>
+                <h3>Gini: {{pais.gini| number}} </h3>
+            </div>
+        </div>
+    </div>
+
+</ng-template>
